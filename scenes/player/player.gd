@@ -5,6 +5,7 @@ class_name Player
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI
+@onready var hand: Hand = $Hand
 
 
 func set_character_stats(value: CharacterStats) -> void:
