@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=5 format=3 uid="uid://bpdh4cr0tseyp"]
+
+[ext_resource type="Script" path="res://resources/deck.gd" id="1_8akpr"]
+[ext_resource type="Resource" uid="uid://dfc0ahbxqosr3" path="res://resources/cards/mage_cards/lightning_attack.tres" id="1_u4cig"]
+[ext_resource type="Resource" uid="uid://svk5vnk4vd57" path="res://resources/cards/basic_cards/basic_block.tres" id="2_os0jd"]
+[ext_resource type="Resource" uid="uid://b6q80cnovtt2m" path="res://resources/cards/basic_cards/beam_attack.tres" id="3_p0nt2"]
+
+[resource]
+script = ExtResource("1_8akpr")
+cards = Array[Resource("res://resources/cards.gd")]([ExtResource("1_u4cig"), ExtResource("2_os0jd"), ExtResource("2_os0jd"), ExtResource("3_p0nt2"), ExtResource("3_p0nt2")])

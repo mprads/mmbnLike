@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=4 format=3 uid="uid://dw2oyn35u1oil"]
+
+[ext_resource type="Script" path="res://resources/deck.gd" id="1_7psx4"]
+[ext_resource type="Resource" uid="uid://b6q80cnovtt2m" path="res://resources/cards/basic_cards/beam_attack.tres" id="1_abihi"]
+[ext_resource type="Resource" uid="uid://svk5vnk4vd57" path="res://resources/cards/basic_cards/basic_block.tres" id="2_tfnue"]
+
+[resource]
+script = ExtResource("1_7psx4")
+cards = Array[Resource("res://resources/cards.gd")]([ExtResource("1_abihi"), ExtResource("1_abihi"), ExtResource("2_tfnue"), ExtResource("2_tfnue")])

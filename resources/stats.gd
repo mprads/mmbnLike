@@ -3,8 +3,10 @@ class_name Stats
 
 signal stats_changed
 
+@export var name: String
 @export var max_health := 2
 @export var art: Texture
+@export var basic_attack_damage:= 5
 
 var health: int : set = set_health
 var block: int : set = set_block
