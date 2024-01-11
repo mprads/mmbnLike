@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh83h4tbrbam0"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_lw443"]
+[ext_resource type="PackedScene" uid="uid://8ac25x6x2x27" path="res://scenes/ui/stats_ui.tscn" id="2_56khb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhiwq"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_lw443")
+
+[node name="StatsUI" parent="." instance=ExtResource("2_56khb")]
+offset_left = -15.0
+offset_top = -50.0
+offset_right = 15.0
+offset_bottom = -30.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+offset = Vector2(0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_nhiwq")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
