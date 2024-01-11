@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://8ac25x6x2x27"]
+
+[ext_resource type="Script" path="res://scenes/ui/stats_ui.gd" id="1_1gksc"]
+
+[node name="StatsUI" type="VBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_bottom = 15.0
+grow_horizontal = 2
+theme_override_constants/separation = 2
+alignment = 1
+script = ExtResource("1_1gksc")
+
+[node name="HealthProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="BlockProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.952941, 0.878431, 1)
+layout_mode = 2
+value = 50.0
+show_percentage = false
