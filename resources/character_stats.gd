@@ -2,7 +2,7 @@ extends Stats
 class_name CharacterStats
 
 @export var starting_deck: Deck
-@export var cards_per_turn: int
+@export var cards_per_draw: int
 
 var deck: Deck
 

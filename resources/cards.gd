@@ -11,26 +11,28 @@ enum Shape {T, L, I, O, X}
 @export var target: Target
 @export var grid_shape: Shape
 
+@export_group("Card Visuals")
+@export var icon: Texture
 
-func _get_targets(targets: Array[Node]) -> Array[Node]:
-	if not targets:
-		return []
 
-	var tree := targets[0].get_tree()
+func _get_targets() -> Array[Node]:
 
 	match target:
 		Target.SELF:
-			return tree.get_nodes_in_group("player")
+			return []
+			#return tree.get_nodes_in_group("player")
 		Target.ENEMY:
-			return tree.get_nodes_in_group("enemy")
+			return []
+			#return tree.get_nodes_in_group("enemy")
 		Target.EVERYONE:
-			return tree.get_nodes_in_group("player") + tree.get_nodes_in_group("enemy")
+			return []
+			#return tree.get_nodes_in_group("player") + tree.get_nodes_in_group("enemy")
 		_:
 			return []
 
 
-func play(targets: Array[Node]) -> void:
-	apply_effects(_get_targets(targets))
+func play() -> void:
+	apply_effects(_get_targets())
 
 
 func apply_effects(_targets: Array[Node]) -> void:

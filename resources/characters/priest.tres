@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_mjjrp")
 starting_deck = ExtResource("3_7ejn0")
-cards_per_turn = 4
+cards_per_draw = 3
 name = "Priest"
 max_health = 50
 art = ExtResource("1_saki2")
