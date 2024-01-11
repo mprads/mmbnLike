@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dfc0ahbxqosr3"]
+
+[ext_resource type="Script" path="res://resources/cards/mage_cards/lightning_attack.gd" id="1_ovrid"]
+
+[resource]
+script = ExtResource("1_ovrid")
+id = "mage_lightning_attack"
+type = 0
+target = 1
+grid_shape = 4
