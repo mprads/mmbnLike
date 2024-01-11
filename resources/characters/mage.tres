@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=3 format=3 uid="uid://ciorg08muem0u"]
+
+[ext_resource type="Script" path="res://resources/character_stats.gd" id="1_lelf2"]
+[ext_resource type="Texture2D" uid="uid://cw5f564mwch2m" path="res://assets/character/mage.png" id="2_rc8vn"]
+
+[resource]
+script = ExtResource("1_lelf2")
+max_health = 50
+art = ExtResource("2_rc8vn")
