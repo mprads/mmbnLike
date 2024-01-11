@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp4lvnlr1oudk"]
+
+[ext_resource type="Texture2D" uid="uid://tl43byk84l0x" path="res://assets/environment/32x32tile2d.png" id="1_5n2hr"]
+[ext_resource type="Script" path="res://assets/environment/tile_map.gd" id="2_02huv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tia7y"]
+texture = ExtResource("1_5n2hr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_160nk"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_tia7y")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_160nk")
+rendering_quadrant_size = 32
+format = 2
+script = ExtResource("2_02huv")
