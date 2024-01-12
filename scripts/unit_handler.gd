@@ -3,11 +3,11 @@ class_name UnitHandler
 
 @onready var tile_map: TileMap = $"../TileMap"
 
-const HAND_DRAW_INTERVAL := 0.25
-const UNIT := preload("res://scenes/player/player.tscn")
+const HAND_DRAW_INTERVAL := 0.1
+const UNIT := preload("res://scenes/unit/unit.tscn")
 
 var character: CharacterStats
-var new_character: Player
+var new_character: Unit
 
 
 func draw_cards(amount: int) -> void:
@@ -24,6 +24,10 @@ func draw_card() -> void:
 func _create_character(char_stats: CharacterStats) -> void:
 	character = char_stats
 	new_character = UNIT.instantiate()
+	_set_character(new_character)
+
+
+func _set_character(new_character: Unit) -> void:
 	new_character.stats = character
 	add_child(new_character)
 

@@ -9,6 +9,6 @@ script = ExtResource("1_mjjrp")
 starting_deck = ExtResource("3_7ejn0")
 cards_per_draw = 3
 name = "Priest"
-max_health = 50
+max_health = 5
 art = ExtResource("1_saki2")
 basic_attack_damage = 5

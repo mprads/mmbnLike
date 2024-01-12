@@ -8,11 +8,11 @@ class_name CardUI
 @onready var icon: TextureRect = $Icon
 
 
-func play(tree: SceneTree) -> void:
+func play(character: Unit) -> void:
 	if not card:
 		return
 
-	card.play(tree)
+	card.play(character)
 	#TODO: instead of queue free'ing show a disabled version so the indexes do not change
 	queue_free()
 

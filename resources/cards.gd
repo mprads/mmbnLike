@@ -1,6 +1,8 @@
 extends Resource
 class_name Card
 
+signal require_hitbox_target
+
 enum Type {TARGETING, HITBOX, POWER}
 enum Target {SELF, ENEMY, EVERYONE}
 enum Shape {T, L, I, O, X}
@@ -15,23 +17,25 @@ enum Shape {T, L, I, O, X}
 @export var icon: Texture
 
 
-func _get_targets(tree: SceneTree) -> Array[Node]:
+func _get_targets(character: Unit) -> Array[Node]:
 	if type == Type.TARGETING || type == Type.POWER:
 		match target:
 			Target.SELF:
-				return tree.get_nodes_in_group("player")
+				return character.get_tree().get_nodes_in_group("player")
 			Target.ENEMY:
-				return tree.get_nodes_in_group("enemy")
+				return character.get_tree().get_nodes_in_group("enemy")
 			Target.EVERYONE:
-				return tree.get_nodes_in_group("player") + tree.get_nodes_in_group("enemy")
+				return character.get_tree().get_nodes_in_group("player") + character.get_tree().get_nodes_in_group("enemy")
 			_:
 				return []
+	elif type == Type.HITBOX:
+		return [character.get_target_from_raycast()]
 	else:
 		return []
 
 
-func play(tree: SceneTree) -> void:
-	apply_effects(_get_targets(tree))
+func play(character: Unit) -> void:
+	apply_effects(_get_targets(character))
 
 
 func apply_effects(_targets: Array[Node]) -> void:
