@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://svk5vnk4vd57"]
+
+[ext_resource type="Script" path="res://resources/cards/basic_cards/basic_block.gd" id="1_n8aj6"]
+[ext_resource type="Texture2D" uid="uid://0g0p3gu63l3w" path="res://assets/card_icons/shield.png" id="1_quqe2"]
+
+[resource]
+script = ExtResource("1_n8aj6")
+id = "basic_block"
+type = 2
+target = 0
+grid_shape = 3
+icon = ExtResource("1_quqe2")

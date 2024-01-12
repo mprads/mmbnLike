@@ -1,49 +1,29 @@
-extends CharacterBody2D
+extends Unit
 class_name Player
 
-@export var stats: CharacterStats : set = set_character_stats
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var stats_ui: StatsUI = $StatsUI
-
-
-func set_character_stats(value: CharacterStats) -> void:
-	stats = value
-
-	if not stats.stats_changed.is_connected(update_stats):
-		stats.stats_changed.connect(update_stats)
-
-	update_player()
-
-func update_player() -> void:
-	if not stats is CharacterStats:
-		return
-	if not is_inside_tree():
-		await ready
-
-	sprite_2d.texture = stats.art
-	update_stats()
+func _die() -> void:
+	Events.player_died.emit()
 
 
-func update_stats():
-	stats_ui.update_stats(stats)
+func get_target_from_raycast() -> Unit:
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position, global_position + Vector2(500, 0))
+	var result = space_state.intersect_ray(query)
 
-func take_damage(damage: int) -> void:
-	if stats.health <= 0:
+	if not result.is_empty():
+		return result["collider"]
+	else:
+		return null
+
+
+func basic_attack() -> void:
+	if not stats:
 		return
 
-	stats.take_damage(damage)
+	var target = get_target_from_raycast()
 
-	if stats.health <= 0:
-		queue_free()
+	if not target:
+		return
 
-
-func move(pos: Vector2) -> void:
-	global_position = pos
-
-
-func _ready() -> void:
-	if not stats_ui.is_node_ready():
-		await stats_ui.ready
-
-	stats_ui.set_max_value(stats)
+	target.take_damage(stats.basic_attack_damage)

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b6q80cnovtt2m"]
+
+[ext_resource type="Script" path="res://resources/cards/basic_cards/beam_attack.gd" id="1_1wi86"]
+[ext_resource type="Texture2D" uid="uid://dnkiil8qdl4ib" path="res://assets/card_icons/arrow.png" id="1_llajk"]
+
+[resource]
+script = ExtResource("1_1wi86")
+id = "basic_beam_attack"
+type = 1
+target = 1
+grid_shape = 2
+icon = ExtResource("1_llajk")

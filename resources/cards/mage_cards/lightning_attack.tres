@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dfc0ahbxqosr3"]
+
+[ext_resource type="Texture2D" uid="uid://bxnoe3qtkexv6" path="res://assets/card_icons/vial.png" id="1_0krij"]
+[ext_resource type="Script" path="res://resources/cards/mage_cards/lightning_attack.gd" id="1_ovrid"]
+
+[resource]
+script = ExtResource("1_ovrid")
+id = "mage_lightning_attack"
+type = 0
+target = 1
+grid_shape = 4
+icon = ExtResource("1_0krij")

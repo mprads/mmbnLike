@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://bii06w7fk4mqv"]
+
+[ext_resource type="Script" path="res://resources/character_stats.gd" id="1_mjjrp"]
+[ext_resource type="Texture2D" uid="uid://ba0l30dyy60l7" path="res://assets/character/priest.png" id="1_saki2"]
+[ext_resource type="Resource" uid="uid://bpdh4cr0tseyp" path="res://resources/starting_decks/mage_starting_deck.tres" id="3_7ejn0"]
+
+[resource]
+script = ExtResource("1_mjjrp")
+starting_deck = ExtResource("3_7ejn0")
+cards_per_draw = 3
+name = "Priest"
+max_health = 50
+art = ExtResource("1_saki2")
+basic_attack_damage = 1
