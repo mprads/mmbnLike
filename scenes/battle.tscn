@@ -1,20 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5eo7626eossm"]
+[gd_scene load_steps=7 format=3 uid="uid://b5eo7626eossm"]
 
 [ext_resource type="PackedScene" uid="uid://cp4lvnlr1oudk" path="res://assets/environment/tile_map.tscn" id="1_3aoom"]
 [ext_resource type="Script" path="res://scenes/battle.gd" id="1_e8ds0"]
 [ext_resource type="Resource" uid="uid://ciorg08muem0u" path="res://resources/characters/mage.tres" id="2_hlcyt"]
+[ext_resource type="Resource" uid="uid://bii06w7fk4mqv" path="res://resources/characters/priest.tres" id="3_dygh3"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="4_bb8jx"]
+[ext_resource type="PackedScene" uid="uid://c23locrw6vicb" path="res://scenes/enemy/enemy_handler.tscn" id="5_oucnd"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_e8ds0")
-char_stats = ExtResource("2_hlcyt")
+player_stats = ExtResource("2_hlcyt")
+enemy_stats = ExtResource("3_dygh3")
 
 [node name="TileMap" parent="." instance=ExtResource("1_3aoom")]
 position = Vector2(230, 200)
 layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 65538, 0, 0, 65537, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 131076, 0, 0, 131075, 0, 0, 65539, 0, 0, 65540, 0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(320, 180)
+position = Vector2(325, 255)
+zoom = Vector2(2, 2)
 
 [node name="PlayerHandler" type="Node2D" parent="."]
 script = ExtResource("4_bb8jx")
+
+[node name="EnemyHandler" parent="." instance=ExtResource("5_oucnd")]

@@ -13,6 +13,7 @@ func play(tree: SceneTree) -> void:
 		return
 
 	card.play(tree)
+	#TODO: instead of queue free'ing show a disabled version so the indexes do not change
 	queue_free()
 
 

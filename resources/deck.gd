@@ -5,6 +5,8 @@ class_name Deck
 
 
 func draw_card() -> Card:
+	#TODO: Maybe need a draw pile that is a clone of the deck and pops on pick
+	#to prevent having duplicates in the hand
 	var card = cards.pick_random()
 	return card
 

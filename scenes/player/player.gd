@@ -11,6 +11,7 @@ class_name Player
 func set_character_stats(value: CharacterStats) -> void:
 	stats = value
 
+	#Ensures the player node is ready so there is no blinking of the UI
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)
 
