@@ -11,4 +11,4 @@ cards_per_draw = 4
 name = "Mage"
 max_health = 50
 art = ExtResource("2_rc8vn")
-basic_attack_damage = 5
+basic_attack_damage = 1

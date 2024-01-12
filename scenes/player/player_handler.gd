@@ -37,3 +37,5 @@ func _input(event: InputEvent) -> void:
 		new_character.hand.get_child(2).play(new_character)
 	elif event.is_action_pressed("use_slot_4"):
 		new_character.hand.get_child(3).play(new_character)
+	elif event.is_action_pressed("basic_attack"):
+		new_character.basic_attack()
